@@ -1,0 +1,438 @@
+Home Automation Using the Internet of Things (IoT)
+Read the tutorial blog on how to implement Home Automation using IoT. It covers the software, hardware, sensors, protocols, architecture, and platforms.
+
+
+Hardik Shah
+March 20, 2019
+10 mins read
+Last Updated February 27, 2023
+Home automation using iot
+Quick Summary :- Read the tutorial blog on how to implement Home Automation using IoT. It covers the software, hardware, sensors, protocols, architecture and platforms. Applications of IoT-enabled connectivity are home security, air quality monitoring, infotainment delivery, smart lock etc.
+Table of Contents
+IoT home automation: Getting started
+Home Automation Sensors
+Home Automation Architectures, Gateways, and Platforms
+Home Automation Using the Internet of Things (IoT)
+What really would compel someone to actually develop a product which is a complete IoT-based home automation system? Could it be the need to improve the safety of your home, could it be the desire to live a Jetson-like life that millennials always dreamt of.
+
+It is difficult to say, often, it is even more difficult to visualize the technology that is required to build a home automation platform.
+
+Due to the complexity introduced by software, hardware and networking ecosystems, it becomes extremely important to learn, understand and utilize the right home automation technology for your smart home product.
+
+We hope to address some of the concerns with this article.
+
+IoT home automation: Getting started
+Home automation has three major parts:
+
+Hardware
+Software/Apps
+Communication protocols
+Each of these parts is equally important in building a truly smart home experience for your customers. Having the right hardware enables the ability to develop your IoT prototype iteratively and respond to technology pivots with ease.
+
+A protocol selected with the right testing and careful consideration helps your avoiding performance bottlenecks that otherwise would restrict the technology and device integration capabilities with sensors and IoT gateways.
+
+Another important consideration is the firmware that resides in your hardware managing your data, managing data transfer, firmware OTA updates and performing other critical operations to make things talk.
+
+Applications of home automation
+Rebuilding consumer expectations, home automation has been projected to target wide array applications for the new digital consumer. Some of the areas where consumers can expect to see home automation led IoT-enabled connectivity are:
+
+Lighting control
+HVAC
+Lawn/Gardening management
+Smart Home Appliances
+Improved Home safety and security
+Home air quality and water quality monitoring
+Natural Language-based voice assistants
+Better Infotainment delivery
+AI-driven digital experiences
+Smart Switches
+Smart Locks
+Smart Energy Meters
+The list is still not exhaustive and will evolve over the time to accommodate new IoT use cases.
+
+Now that you are familiar with home automation applications, let’s have a detailed look at what components are involved in building a typical home automation prototype.
+
+Home automation components
+We have talked about them before, but, let’s clearly separate them into components that would finally help you build a realistic model of what major components are involved in building a smart home. The major components can be broken into:
+
+IoT Sensors
+IoT Gateways
+IoT Protocols
+IoT Firmware
+IoT Cloud and Databases
+IoT Middleware (if required)
+IoT sensors involved in home automation are in thousands, and there are hundreds of home automation gateways as well. Most of the firmware is either written in C, Python, Node.Js, or any other programming language.
+
+The biggest players in IoT cloud can be divided into a platform as a service(PaaS) and infrastructure as a service(LaaS).
+
+Major IoT platform as a service provider:
+AWS IoT
+Azure IoT
+Thingworx
+Ubidots
+Thingspeak
+Carriots
+Konekt
+TempoIQ
+Xively
+IBM Bluemix
+Characteristics of IoT platforms
+Again these platforms are extremely divided over the IoT application and security-related features that they provide. A few of these platforms are open source.
+
+Let’s have a look at what you should expect from a typical IoT platform:
+
+Device security and authentication
+Message brokers and message queuing
+Device administration
+Support towards protocols like CoAP, MQTT, HTTP
+Data collection, visualization, and simple analysis capabilities
+Integrability with other web services
+Horizontal and vertical scalability
+WebSocket APIs for real time for real-time information flow
+Apart from what we mentioned above, more and more platform builders are open sourcing their libraries to developers. Take for example the Dallas temperature library for DS18B20 for Arduino was quickly ported because of open source development to a new version that helped developers to integrate DS18B20 with Linkit One. Understanding these things become crucial as IoT tends to evolve continuously and having an equally responsive platform makes it business safe to proceed.
+
+Let’s now deeply evaluate each of these components, starting with IoT sensors
+
+Home Automation Sensors
+There are probably thousands of such sensors out there that can be a part of this list. Since this is an introduction towards smart home technology, we will keep it brief. We will break down IoT sensors for home automation by their sensing capabilities:
+
+Temperature sensors
+Lux sensors
+Water level sensors
+Air composition sensors
+Video cameras for surveillance
+Voice/Sound sensors
+Pressure sensors
+Humidity sensors
+Accelerometers
+Infrared sensors
+Vibrations sensors
+Ultrasonic sensors
+Depending upon what you need you may use one or many of these to build a truly smart home IoT product. Let’s have a look at some of the most commonly used home automation sensors.
+
+Temperature sensors
+The market is full of them, but the famous temperature sensors are DHT11/22, DS18B20, LM35 and MSP430 series from TI. MSP430 series is more accurate than the rest but at the same time is one of the most expensive for prototyping or initial product testing purposes. MSP430 tops all temperature sensors as the precision and battery consumption is minimum with them.
+
+MSP430 tops all temperature sensors as the precision and battery consumption is minimum with them.
+
+DHT11 has a very restricted temperature range and suffers from accuracy issues. DHT22, on the other hand, is a little bit more accurate but still, doesn’t make it as the preference.
+
+DS18B20’s, on the other hand, are more accurate, as opposed to digital temperature sensors like DHT22 and 11, Dallas temperature sensors are analog and can be extremely accurate down to 0.5 degrees.
+
+home-automation-sensors
+
+ 
+
+Take note that often the temperatures that you directly sense from these sensors may not be very accurate and you would occasionally see 1000 F or greater values no matter what you are doing.
+
+There’s an entire logic that goes around building temperature sensors, that we will address in another blog post.
+
+Lux Sensors
+Lux sensors measure the luminosity and can be used to trigger various functions range from cross-validating movements to turn the lights on if it becomes too dark. Some of the most popular light sensors are TSL2591 and BH1750.
+
+Recent tests to include TSL2591 and BH1750 into low-powered IoT devices have found them to be working fairly good for most of the use cases.
+
+Here’s a study was done by Robert and Tomas that shows how these two compare against a spectrometer and a photodiode.
+
+Illuminance-test
+
+ 
+
+To get a good idea of whether these two sensors would suffice your needs we would suggest illuminance tests followed by normalization of the data to observe deviations under various situations.
+
+Water level sensors for Home Automation
+While building your prototype you may consider a solid state eTape liquid level sensor, or like others who just use an HC-SR04 ultrasonic sensor to measure the water level sensor.
+
+On the other hand, in other cases where those two don’t suffice, one has to utilize something that can deliver a much higher performance.
+
+Float level sensors and other ICs like LM1830 offers a more precise measurement capability to IoT developers. Although, they are substantially much more expensive than others.
+
+Air composition sensors
+There are a couple of specific sensors that are used by developers to measure specific components in the air:
+
+CO monitoring by MiCS-5525
+MQ-8 to measure Hydrogen gas levels
+MiCS-2714 to measure nitrogen oxide
+MQ135 to sense hazardous gas levels (NH3, NOx, Alcohol, Benzene, smoke, CO2
+Most of these are sensors have a heating time, which also means that they require a certain time before they actually start delivering accurate values.
+
+ 
+
+Gas-sensor-before-and-after-heating
+
+ 
+
+These sensors mainly rely on their surface to detect gas components. When they initially start sensing, there’s always something that’s there on their surface, some sort of deposition that requires some heating to go away.
+
+Hence, after the surface gets heated enough true values start to show up.
+
+Video cameras for surveillance and analytics
+A range of webcams and cameras specific to Hardware development kits are usually used in such scenarios. Hardware with USB ports offers to integrate and camera module to build functionalities.
+
+But, utilizing USB ports in not very efficient, especially in the case of real-time video transfer or any kind of video processing.
+
+Take RaspberryPi for example, it comes with a camera module (Pi cam) that connects using a flex connector directly to the board without using the USB port. This makes the Pi cam extremely efficient.
+
+Sound detection for Home Automation
+Sound detection plays a vital role from monitoring babies to turning on and off lights automatically to automatically detecting your dog’s sound at the door and opening it up for them.
+
+Some commonly used sensors for sound detection includes SEN-12462 and EasyVR Shield for rapid prototyping.
+
+These sensors aren’t as good as industrial grade sensors like those from 3DSignals which can detect even ultra-low levels of noise and fine tune between various noise levels to build even machine break up patterns.
+
+Humidity sensors for Home Automation
+These sensors bring the capability of sensing humidity/RH levels in air for smart homes. The accuracy and sensing precision depends a lot on multiple factors including the overall sensor design and placement.
+
+But certain sensors like DHT22 and 11 built for rapid prototyping would always perform poorly when compared to high-quality sensors like HIH6100 and Dig RH.
+
+While building a product to sense humidity levels, ensure that there’s no localized layer of humidity that is obscuring the actual results. Also, keep into consideration that in certain small spaces, the humidity might be too high at one end as compared to the others.
+
+When you look at free and open spaces where the air components can move much freely, the distribution around the sensor can be expected to be uniform and subsequently would require very less amount of corrective actions for the right calibration.
+
+Home Automation Protocols
+One of the most important parts of building a home automation product is to think about protocols, protocols that your device would use to communicate to gateways, servers, and sensors. A few years ago, the only way to do so was by either using Bluetooth, wifi or GSM. But due to added expenses on cellular sim cards, and low performance of Wifi, most such solutions didn’t work.
+
+A few years ago, the only way to do so was by either using Bluetooth, wifi or GSM. But due to added expenses on cellular sim cards, and low performance of Wifi, most such solutions didn’t work.
+
+Bluetooth survived and later evolved as Bluetooth Smart or Bluetooth low energy. This helped bring a lot of connectivity in the “mobile server powered economy”, in this essentially your phone would act as a middleware to fetch data from BLE powered sensors and sent it over to the internet.
+
+When looking at the major home automation protocols, the following tops the list:
+
+Bluetooth low energy or Bluetooth Smart: Wireless protocol with mesh capabilities, security, data encryption algorithms and much more. Ideal for IoT-based products for smart homes.
+Zigbee: Low cost, mesh networked and low power radio frequency based protocol for IoT. Different Zigbee versions don’t talk to each other.
+X10: A legacy protocol that utilizes powerline wiring for signaling and control
+Insteon: Communicates with devices both wirelessly and with wires
+Z-wave: Specializes in home automation with an emphasis on security
+Wifi: Needs no explanation
+UPB: Uses existing power lines installed in a home, reduces costs
+Thread: A royalty-free protocol for smart home automation, uses a 6lowpan
+ANT: An ultra low power protocol helping developers build low-powered sensors with a mesh distribution capabilities.
+6lowpan
+Home Automation: Which protocol is the best?
+While there are some protocols that clearly offer much more than others, but it is always important to start from your smart home development needs and then move towards narrowing down the solutions.
+
+The commonly preferred protocols are Bluetooth low energy, Z-wave, Zigbee, and Thread. The protocol selection can now be narrowed down by the following factors:
+
+Ability to perform identity verification
+Quality of sensor networks
+Data transfer rate
+Security level
+Network topology required
+Density of objects around
+Effective Distance to be covered
+Recommended Read: Home Automation protocols for the Internet of Things
+
+Home Automation Architecture
+home-automation-architecture
+
+ 
+
+This architecture supports the following considerations for home automation solutions:
+
+End to end security mechanisms involving multilevel authentication
+End to end data encryption, including the link layer
+Flexible and configurable access and authorization control
+Powerful cloud infrastructure
+Network agnostic with built-in feedback loops
+Configurable cloud-based rules engine
+API endpoints
+Data scalability
+NoSQL databases
+Home Automation Gateways
+For developing a home automation product, often stand-alone product sending data to a server is not enough. Often due to battery and protocol limitations, the data from a sensor or sensors present in a home has been routed through an IoT gateway.
+
+To select the perfect gateway for your IoT home automation, consider some of the factors including:
+
+Communication protocols supported
+Real-time capabilities
+MQTT, CoAP, HTTPS support
+Security and configuration
+Modularity
+When it comes to building IoT gateways, modularity and hybrid IoT protocol support top that list when a product is in the early stages of market introduction.
+
+To incorporate a gateway in your home automation stack you can consider the following options:
+
+Either create a Gateway from the ground up using existing hardware stacks for prototyping(using Raspberry Pi, Intel Edison, etc). Then when a PoC is validated you can create your own custom hardware.
+
+Or, you can use existing gateway modules like Ingincs BLE gateway. These gateways are extremely easy to customize and connect with your cloud services and devices. However, they may or may not offer the same level of support that you need to build certain features.
+
+For example, a gateway with a bad networking queue may result in traffic congestion, or it may not support the required protocols that you wish to use.
+
+Further, pivoting with these gateways to some other technology stack may become very difficult. It should have been emphasized that they are extremely good for robust prototyping needs.
+
+Home automation programming language for smart home developers
+The following programming languages dominated the home automation space: Python, Embedded C, C, Shell, Go, Javascript (node.js). This has mainly happened due to the sheer optimization of the languages for similar use cases.
+
+Home Automation frameworks
+If you think you can build everything from home automation (protocols, hardware, software, etc) on your own, it is a bit unrealistic. Everyone starting from high growth startups to billion dollar consumer focused enterprises are now taking the help of home automation frameworks to build connected products to delight consumers.
+
+Everyone starting from high growth startups to billion dollar consumer focused enterprises are now taking the help of home automation frameworks to build connected products to delight consumers.
+
+There are more than 15 different smart home frameworks available for IoT developers to use and build their next generation of connected home products. Some of these frameworks are open source and some are closed-source. Let’s have a look at some of them in the sections that follows.
+
+Some of these frameworks are open source and some are closed-source. Let’s have a look at some of them in the sections that follows.
+
+Open source IoT platforms and frameworks for Home Automation
+Looking forward to doing a quick and dirty prototype? There’s no need to write down everything from scratch. Thanks to a bunch of awesome contributions by people like we have open source platforms that can get your home automation products up and running in no time.
+
+Our favorites are:
+
+Home Assistant
+Calaos
+Domoticz
+OpenHAB: Supports Raspberry Pi, written in Java and has design tools to build your own mobile apps by tweaking UI.
+OpenMotics[Asked their developer, waiting for them to respond(dev confirmed)]
+LinuxMCE
+PiDome
+MisterHouse
+Smarthomatic
+Let’s take a look at the major home automation IoT platforms.
+
+Home Assistant for smart home development:
+Supports RaspberryPi, uses Python with OS as Hassbian. It has simplified automation rules that developers can use to build their home automation product saving them thousands of lines of code.
+
+Home Assistant supports the following:
+
+Home-assistant
+
+ 
+
+How home assistant works involve the following:
+
+Home control responsible for collecting information and storing devices
+Home automation triggers commands based on user configurations
+Smart home triggers based on past user behavior
+As developers, it is very important for us to understand the architecture of Home Assistant for us to build high-performing products on top of it.
+
+Let’s have a look at Home control’s architecture that makes control and information flow possible.
+
+Home control consists of five components:
+
+Components
+State machine
+Event bus
+Service registry
+Timer
+The core architecture of Home Assistant
+
+Home-automation-core-archietecture
+
+ 
+
+All of these components working together create a seamless asynchronous system for smart home IoT. In the earlier version of Home Assistant core, the core often had to stop while looking for new device information.
+
+But, with the new versions of home assistant, a backward compatible API, and ansyn core have been introduced making things a lot faster for IoT applications.
+
+The best part about home assistant’s core architecture is how carefully it has been designed and developed to support IoT at home.
+
+OpenHAB for Smart home automation
+OpenHAB is a home automation and IoT gateway framework for smart homes. Similar to Home Assistant, OpenHAB works nicely with Raspberry Pi and comes with their own design tools to create a UI for your home automation product.
+
+An understanding architecture of OpenHAB:
+
+Modularity: It is realized with the bundle concept
+Runtime dynamics: so that software components can be managed at the runtime
+Service orientation: there are services for various components to speak with each other and exchange information
+Further relying on the OGSi framework, it leverages the following layers stacked together:
+
+Modular layer: Manages dependencies between bundles
+Life cycle layer: controls the life cycle of the bundles
+Service layers: defines a dynamic model of communication between various modules
+Actual services: this is the application layer, using all other layers
+Security layer: optional, leverages Java 2 security architecture and manages permissions from different modules
+OpenHAB-architecture
+
+ 
+
+OpenHAB features:
+
+Plugin framework
+Rules engine
+Logging mechanism
+UI abstraction: A tree structure for UI Widgets, Item UI providers, and dynamic UI configuration
+UI implementations are available for the web, Android, and iOS
+Designer tools availability
+OpenHAB has been primarily only been observed as a project for the hobbyist programmer, even many parts of openhab.org convey the same. But, we have observed a different effort in the recent times from OpenHAB into building the developer economy for building IoT smart homes.
+
+Takes this slowly growing Github repo talking about OpenHAB cloud for example.
+
+According to the repository, OpenHAB cloud architecture will look something like this: OpenHAB-cloud-architecture
+
+ 
+
+Impressive enough that some open platform out there is thinking about system services, Cron jobs, logging, etc.
+
+Further, looking at the frameworks and technologies that openHAB will support: Node.Js, Express.Js, Nginx, MongoDB, Redis, Socket.IO
+
+Unlike Home Assistant’s vast integrability, openHAB is currently limited to:
+
+IFTTT
+Amazon Alexa
+AWS EC2 [AWS Multi-AZ isn’t compatible for multiple time zone availability]
+AWS IoT with openHAB
+MQTT support
+OpenHAB is extremely powerful, but at the same time very limited in terms of integration. The team behind openHAB is extremely promising and have already conveyed their plans to open up openHAB to other integration capabilities very shortly.
+
+Calaos for Home Automation
+Calaos was developed initially by a company that was closed back in 2013, but the home automation since then has lived and is being maintained and upgraded by developers. While now being open source, it facilitates premade source code to:
+
+Create sweet home environment
+Control music
+Automation rules that focus on time, mood or ambiance
+Easy configuration
+Calaos supports the following hardware:
+
+Premoboard
+Cubieboard
+RaspberryPi
+Intel-based machines
+Their lack of support towards developing private IoT applications restricts their usage by developers to build high-quality solutions for consumers.
+
+Domoticz for Home Automation
+Domoticz allows you to monitor and configure your devices and sensors with the simplest possible design. Impressive enough that the entire project is extremely lightweight, it further is backed by high integrability with third parties and features like auto learning switches.
+
+This platform has been designed to work with operating systems like Linux and Windows.
+
+Protocol capabilities of Domoticz include:  Z-wave, Bluetooth, Apple Homekit, X10 and MQTT
+
+Hardware integration capabilities of Domoticz:
+
+RFXCOM Transceiver
+ESP2866 Wifi module
+P1 smart meter
+Youless meter
+Pulse counters
+1-Wire
+Philips Hue
+Essent E thermostat
+Domiticz can be used to create any sort of services that you can think of, ranging from a smart weather device to a Telegram bot.
+
+Domoticz architecture
+Currently, very few people know about the architecture of Domoticz, making it extremely difficult to build applications on it without taking unnecessary risks in building the product itself.
+
+For example, the entire design of general architecture feels a little weird when you look at the concept of a sensor to control to an actuator. It seems to be missing.
+
+Building advanced application with Domoticz can be done using C++, lula, PHP, shell, etc.
+
+Blockchain in IoT for connected home
+Consumers, especially those who grew up in the digital era understand the importance of privacy and security more than millennials. With the evolution of IoT, security has taken center stage for realistic deployment scenarios.
+
+Deployment of Blockchain into home networks can easily be done with a $35 raspberry pi. A blockchain secured layer between devices and gateways can be implemented without massive revamp of the existing code base.
+
+Blockchain
+
+Simply put, blockchain as a technology that would be an implementation that most users won’t even know about, but will play a huge role in future to reassure them with revolutionary and new business models like dynamic renting for Airbnb.
+
+So far, interoperability issues and broken protocols seemed to have hampered the growth of IoT-based smart homes.
+
+But, as technology is progressing and more and more computing power can be generated with very low powered devices, home automation will gradually become a technology that will easy for us to build and develop for on a daily basis.
+
+Home automation is a big space to address in one blog post. If there’s something else that you would like, feel free to drop a comment or reach out to me on Twitter – I am @hsshah_.
+
+CTO’s Handbook for Building Scalable Frontend
+
+Get in touch
+Simform provides you the extended team for all your development needs in any technology.
+First Name*
+Email*
+Message*
